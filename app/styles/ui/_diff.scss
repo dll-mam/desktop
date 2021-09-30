@@ -269,19 +269,13 @@
 .CodeMirror-linebackground {
   &.diff-add {
     background: var(--diff-add-background-color);
-
-    @include high-contrast {
-      border: var(--hc-diff-add-border);
-      margin-top: 1px;
-    }
+    border: var(--diff-add-border);
+    margin-top: 1px;
   }
 
   &.diff-delete {
     background: var(--diff-delete-background-color);
-
-    @include high-contrast {
-      border: var(--hc-diff-delete-border);
-    }
+    border: var(--diff-delete-border);
   }
 
   &.diff-context {

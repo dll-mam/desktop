@@ -6,12 +6,10 @@ import {
 
 describe('CustomTheme', () => {
   describe('buildCustomThemeStyles', () => {
-    it('sets the first line to body.theme-high-contrast {', () => {
+    it('sets the first line to body.theme-custom {', () => {
       const customTheme = CustomThemeDefaults[ApplicationTheme.HighContrast]
       const customThemeStyles = buildCustomThemeStyles(customTheme)
-      expect(customThemeStyles.split('\n')[0]).toBe(
-        'body.theme-high-contrast {'
-      )
+      expect(customThemeStyles.split('\n')[0]).toBe('body.theme-custom {')
     })
 
     it('sets the last line to }', () => {

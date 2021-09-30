@@ -58,8 +58,7 @@ export class AppTheme extends React.PureComponent<IAppThemeProps> {
 
     if (
       !body.classList.contains(newThemeClassName) ||
-      (body.classList.contains('theme-high-contrast') &&
-        !this.props.useCustomTheme)
+      (body.classList.contains('theme-custom') && !this.props.useCustomTheme)
     ) {
       this.clearThemes()
       body.classList.add(newThemeClassName)
@@ -80,11 +79,8 @@ export class AppTheme extends React.PureComponent<IAppThemeProps> {
     const { background } = customTheme
     const body = document.body
 
-    if (!body.classList.contains('theme-high-contrast')) {
-      // Currently our only custom theme is the high-contrast theme
-      // If we were to expand upon custom theming we would not
-      // want this so specific.
-      body.classList.add('theme-high-contrast')
+    if (!body.classList.contains('theme-custom')) {
+      body.classList.add('theme-custom')
       // This is important so that code diff syntax colors are legible if the
       // user customizes to a light vs dark background. Tho, the code diff does
       // still use the customizable text color for some of the syntax text so
